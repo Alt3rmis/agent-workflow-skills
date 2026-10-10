@@ -10,8 +10,8 @@
 
 一组可以独立安装、按需组合的 Agent Skill。它们稳定任务合同、权限和证据，不规定模型必须用哪套思考或工程流程。
 
-[![Upstream](https://img.shields.io/badge/upstream-mattpocock%2Fskills%20v1.2.3-171717?style=flat-square)](https://github.com/mattpocock/skills)
-[![Fork](https://img.shields.io/badge/fork-v1.2.3--to--goal.2-F35B2A?style=flat-square)](https://github.com/tt-a1i/matt-skills-with-to-goal)
+[![Upstream](https://img.shields.io/badge/upstream-mattpocock%2Fskills%20v1.3.1-171717?style=flat-square)](https://github.com/mattpocock/skills)
+[![Fork](https://img.shields.io/badge/fork-v1.3.1--to--goal.1-F35B2A?style=flat-square)](https://github.com/tt-a1i/matt-skills-with-to-goal)
 [![Install](https://img.shields.io/badge/install-npx%20skills-F35B2A?style=flat-square)](#安装)
 [![License](https://img.shields.io/badge/license-MIT-DCF23E?style=flat-square&labelColor=171717)](LICENSE)
 
@@ -164,7 +164,7 @@ Goal
 
 ## 技能地图
 
-仓库保留 **30 个 promoted Skills** 作为可选目录，不代表推荐全部安装或按顺序使用。25 个来自上游；本 fork 新增 `to-goal`、`goal-crafter`、`spec-executor`、`execute-spec-in-fork`、`roundtable`。fork 自有的 Goal 与执行 Skill 除了明确声明的工具依赖外，都能独立使用；上游 Skill 保留各自原有风格。
+仓库保留 **33 个 promoted Skills** 作为可选目录，不代表推荐全部安装或按顺序使用。27 个来自上游，另保留 fork 维护的 `resolving-merge-conflicts`；本 fork 新增 `to-goal`、`goal-crafter`、`spec-executor`、`execute-spec-in-fork`、`roundtable`。fork 自有的 Goal 与执行 Skill 除了明确声明的工具依赖外，都能独立使用；上游 Skill 保留各自原有风格。
 
 ### 规划与交接
 
@@ -187,10 +187,13 @@ Goal
 
 | Skill | 作用 |
 |---|---|
+| [`implement-spec`](./skills/engineering/implement-spec/SKILL.md) | 可选：按依赖图并行实施完整 Spec，在集成分支收尾 |
+| [`retro`](./skills/engineering/retro/SKILL.md) | 可选：复盘会话，改进 Agent 的工具、规范和环境 |
 | [`implement`](./skills/engineering/implement/SKILL.md) | 按 spec 或 tickets 实现，驱动 `/tdd`，收尾跑 `/code-review` |
 | [`execute-spec-in-fork`](./skills/engineering/execute-spec-in-fork/SKILL.md) | Codex App 中把任意已批准工作 Fork、执行、验证回传并归档 |
 | [`spec-executor`](./skills/engineering/spec-executor/SKILL.md) | 在隔离线程锁定已批准来源、权限和 baseline，完成实现并输出 receipt |
 | [`tdd`](./skills/engineering/tdd/SKILL.md) | 在预先确认的 seam 上进行测试驱动实现 |
+| [`pr`](./skills/engineering/pr/SKILL.md) | 编写便于评审的 PR 说明，展示改动、证据与合并风险 |
 | [`code-review`](./skills/engineering/code-review/SKILL.md) | Standards + Spec 双轴评审 |
 | [`prototype`](./skills/engineering/prototype/SKILL.md) | 逻辑用可分享 HTML / UI 用变体探索，并保留为 primary source |
 | [`research`](./skills/engineering/research/SKILL.md) | 使用高可信来源完成技术调研 |
@@ -202,18 +205,18 @@ Goal
 |---|---|
 | [`codebase-design`](./skills/engineering/codebase-design/SKILL.md) | 讨论和比较代码结构设计 |
 | [`diagnosing-bugs`](./skills/engineering/diagnosing-bugs/SKILL.md) | 系统化定位复杂故障 |
-| [`domain-modeling`](./skills/engineering/domain-modeling/SKILL.md) | 维护领域语言、CONTEXT 和 ADR |
+| [`domain-modeling`](./skills/engineering/domain-modeling/SKILL.md) | 维护领域语言、GLOSSARY 和 ADR |
 | [`improve-codebase-architecture`](./skills/engineering/improve-codebase-architecture/SKILL.md) | 识别并推进架构深化机会 |
 | [`resolving-merge-conflicts`](./skills/engineering/resolving-merge-conflicts/SKILL.md) | 处理合并冲突并保护双方意图 |
 | [`teach`](./skills/productivity/teach/SKILL.md) | 多会话教学，目录作为有状态学习空间 |
 | [`wizard`](./skills/engineering/wizard/SKILL.md) | 生成交互式 bash 向导，处理只有人能完成的步骤（开通基础设施、配置凭证 / CI secret） |
-| [`wait-what`](./skills/productivity/wait-what/SKILL.md) | 对话中途没听懂时，让 agent 用 `CONTEXT.md` 词汇重新讲一遍 |
+| [`wait-what`](./skills/productivity/wait-what/SKILL.md) | 对话中途没听懂时，让 agent 用 `GLOSSARY.md` 词汇重新讲一遍 |
 | [`writing-for-agents`](./skills/productivity/writing-for-agents/SKILL.md) | 编写给 agent 消费的文档（skills、AGENTS.md 等） |
 
 ## 设计边界
 
 - 默认一个 goal 只覆盖一个 frontier ticket；`--all` 仅用于明确要求的跨 ticket 持久化执行。
-- `spec-executor` 只执行一个已封版、单会话可完成的 Spec；需求未定或体量溢出时停止并重新路由。
+- `spec-executor` 只执行一个已批准、单会话可完成的来源；需求未定或体量溢出时停止并重新路由。
 - `execute-spec-in-fork` 是 Codex App 的事件驱动适配器，依赖原生任务工具与 Codex Task Messenger；不会启动 daemon、自动重试或跨 Worktree 通信。
 - `to-goal` 只读 spec、tracker 和仓库证据，不实现、不改 issue 状态、不创建分支。
 - Fork 只隔离对话，不隔离文件系统；并行实现仍需独立 worktree、分支和文件所有权。
@@ -223,9 +226,9 @@ Goal
 
 ## 来源与许可
 
-本仓库基于 [mattpocock/skills](https://github.com/mattpocock/skills) **`main` v1.2.3（同步至 2026-09-04，`3cca18b`）**，并叠加自动 fork execution、to-goal 两条上下文边界流程与 roundtable 多视角决策辩论。
+本仓库基于 [mattpocock/skills](https://github.com/mattpocock/skills) **`main` v1.3.1（同步至 2026-10-09，`49dd158`）**，并叠加自动 fork execution、to-goal 两条上下文边界流程与 roundtable 多视角决策辩论。
 
-当前 fork 发行版为 **`1.2.3-to-goal.2`**：前半段表示同步的上游版本，后缀表示本仓库自己的发行序列。Claude 插件、package metadata 和安装入口均使用独立身份 `matt-skills-with-to-goal`，不会覆盖上游的 `mattpocock-skills`。
+当前 fork 发行版为 **`1.3.1-to-goal.1`**：前半段表示同步的上游版本，后缀表示本仓库自己的发行序列。Claude 插件、package metadata 和安装入口均使用独立身份 `matt-skills-with-to-goal`，不会覆盖上游的 `mattpocock-skills`。
 
 - Matt 原版技能：© [Matt Pocock](https://github.com/mattpocock/skills)，MIT
 - 本仓库扩展与适配：MIT
@@ -240,9 +243,13 @@ Goal
 - **产出可选性**：`improve-codebase-architecture` 默认以 markdown 呈现候选，HTML 报告改为按需产出（离线与受限环境下不再残废）
 - **绝对化表述加边界**：`to-spec` 的 seam 数量与 `resolving-merge-conflicts` 的 `--abort` 改为「默认…除非…」句式，保留引导力但不在边缘场景误导
 - **独立发行**：package、Claude plugin、marketplace、changeset 和仓库链接使用本 fork 的名称、版本与远端
-- **本地分发**：`npm run sync:local` 先备份并同步 30 个 promoted Skills 到统一的 `~/.agents_skills/`，再刷新 Hermes 副本
+- **本地分发**：`npm run sync:local` 先备份并同步 33 个 promoted Skills 到统一的 `~/.agents_skills/`，再刷新 Hermes 副本
 - **上游维护**：`npm run sync:upstream` 在干净工作树上创建备份分支，并把 fork overlay rebase 到最新 `upstream/main`；脚本不会自动 push
 - **目录结构**：跟随上游 `skills/{engineering,productivity,misc,in-progress,deprecated}/` 分类
 - **继承边界**：未被本 fork 修改的 Skill 和文档继续继承上游；发行元数据、维护脚本和本 fork 工作流由本仓库独立维护
 
 完整的同步、备份和远端发布约定见 [`docs/maintaining-fork.md`](docs/maintaining-fork.md)。
+
+## 上游同步记录
+
+本次同步至上游 `49dd158`（2026-10-09，基于 v1.3.1）。新增 `implement-spec`、`pr`、`retro`，采用 `GLOSSARY.md` 约定并带入交接、配置向导、诊断与评审修复。保留独立安装和松耦合的 Goal/Fork 合同；上游的工程流程是可选方法。`resolving-merge-conflicts` 由本 fork 继续维护。实验性的 `chief-of-staff` 和上游仓库的 Issue 自动化不随本 fork 引入。

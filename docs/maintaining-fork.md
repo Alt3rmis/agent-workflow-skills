@@ -5,7 +5,7 @@ This repository has two remotes with different jobs:
 - `upstream` is `mattpocock/skills`, the source of upstream releases.
 - `origin` is `tt-a1i/matt-skills-with-to-goal`, the publication target for this fork.
 
-The maintained branch is an **overlay**: upstream history stays intact, and fork-specific workflow changes sit on top. A normal merge from the old `origin/main` is unsafe because that remote branch was created from an earlier unrelated flat history.
+The maintained branch is an **overlay**: upstream history stays intact, and fork-specific workflow changes sit on top. Resolve updates against the published fork intent. Historical branches may predate an upstream rebase; their ancestry alone is not evidence that their content should replace the current fork.
 
 ## Sync upstream
 
@@ -37,8 +37,14 @@ The script backs up every affected canonical Skill under `~/.agents_skills/.bak-
 
 ## Publish to the fork
 
-Local `main` tracks `upstream/main` so `git pull` cannot accidentally merge the old flat `origin/main`. Publishing therefore requires an explicit destination.
+Check the current branch tracking configuration and publish to an explicit `origin` destination. Use a review branch for an upstream sync; leave the published `main` unchanged until the PR is approved.
 
 The first publication of this rewritten history must preserve the old remote tip with a backup branch or tag, then replace `origin/main` using `--force-with-lease`. That is a one-time destructive remote operation and requires explicit user authorization at action time. Later pushes follow the normal fork history.
 
 Never push to `upstream`.
+
+## Reviewable syncs without replacing main
+
+For the 2026-10-10 sync, the guarded rebase prepared the overlay on upstream `49dd158`. The final review commit uses the reconciled tree with both published `origin/main` (`7b44372`) and upstream as parents. This preserves both histories without replaying duplicate fork commits into the published history or requiring a force push. The preparation branch is backed up locally.
+
+Merge an upstream-sync PR with a merge commit, not squash or rebase, so upstream ancestry survives for the next sync. Keep local installs on the accepted repository state; preparing a PR does not update machine-wide Skills.
