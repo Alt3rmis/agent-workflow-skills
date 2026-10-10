@@ -8,7 +8,7 @@ Skills are organized into bucket folders under `skills/`:
 
 Every skill in `engineering/` or `productivity/` (the **promoted** buckets) must have a reference in the top-level `README.md` and an entry in `.claude-plugin/plugin.json`'s `skills` array (the Claude Code plugin ships exactly the promoted set). Skills in `misc/`, `in-progress/`, and `deprecated/` must not appear in either.
 
-Install commands are copied verbatim from [.agents/install-block.md](./.agents/install-block.md). `.claude-plugin/marketplace.json` makes this fork its own single-plugin marketplace. Run `claude plugin validate . --strict` after touching either manifest. Why a Claude plugin but not (yet) a Codex one lives in [.agents/adr/0002-ship-as-a-claude-code-plugin.md](./.agents/adr/0002-ship-as-a-claude-code-plugin.md).
+Install commands are copied verbatim from [.agents/install-block.md](./.agents/install-block.md). `.claude-plugin/marketplace.json` makes this fork its own single-plugin marketplace. Run `claude plugin validate . --strict` after touching either manifest. The upstream managed-install evidence and this fork's distinct installation routes live in [.agents/adr/0002-ship-as-a-claude-code-plugin.md](./.agents/adr/0002-ship-as-a-claude-code-plugin.md).
 
 Each skill entry in the top-level `README.md` must link the skill name to its `SKILL.md`.
 
@@ -25,3 +25,5 @@ To (re)link every skill outside `deprecated/` and `misc/` into the local harness
 Rejected directions get archived, not merely decided. When this fork turns down a skill direction or a design — its own calls, not only upstream feature requests — record it in `.out-of-scope/` under the convention `triage` already follows ([skills/engineering/triage/OUT-OF-SCOPE.md](./skills/engineering/triage/OUT-OF-SCOPE.md)): one file per concept, kebab-case concept name. The reason must be durable — scope, mechanism, or cost, never a temporary circumstance, because a decision resting on the current moment is a deferral rather than a rejection. Never record something that was in fact built; a false rejection poisons the concept matching that makes the directory worth reading.
 
 Before syncing upstream, rewriting fork history, publishing to `origin`, or refreshing local installs, read [docs/maintaining-fork.md](./docs/maintaining-fork.md). Use `npm run sync:upstream` for a guarded upstream rebase and `npm run sync:local` to update the unified local skill source plus Hermes.
+
+Use plain punctuation in repository prose, consistent with upstream: rewrite sentences with commas, colons, periods, parentheses, or conjunctions.

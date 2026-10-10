@@ -60,6 +60,8 @@ Fixed skeleton (do not invent alternatives each round): `🔥` round · type emo
 
 Keep the body text clean — at most one optional mood emoji in the round header line if it helps (e.g. a long session), never a spray of emoji inside the question body.
 
+Word each question so "yes" accepts your recommended answer.
+
 ## Round loop
 
 Each round the user answers reshapes the tree — settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.

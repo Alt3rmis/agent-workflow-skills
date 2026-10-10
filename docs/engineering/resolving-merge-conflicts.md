@@ -1,3 +1,5 @@
+> Fork-maintained: upstream removed this skill in v1.3; this fork retains it as an independently usable tool.
+
 ## What it does
 
 `resolving-merge-conflicts` works through an in-progress git merge or rebase, hunk by hunk, then runs the project's own checks and finishes the operation with a commit.
