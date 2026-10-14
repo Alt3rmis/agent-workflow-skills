@@ -1,13 +1,13 @@
 {
-  "name": "tt-a1i",
+  "name": "alt3rmis",
   "owner": {
-    "name": "tt-a1i",
-    "url": "https://github.com/tt-a1i"
+    "name": "Alt3rmis",
+    "url": "https://github.com/Alt3rmis"
   },
-  "description": "Loosely coupled skills for verifiable goal handoffs and optional forked execution.",
+  "description": "Personal agent workflow skills with dual-file contracts.",
   "plugins": [
     {
-      "name": "matt-skills-with-to-goal",
+      "name": "agent-workflow-skills",
       "source": "./",
       "description": "Independent engineering skills with verifiable goal handoffs and optional forked execution.",
       "category": "engineering",

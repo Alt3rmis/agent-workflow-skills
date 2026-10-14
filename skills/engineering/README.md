@@ -22,6 +22,10 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 
 - **[roundtable](./roundtable/SKILL.md)** — Convene parallel sub-agents that debate a decision from opposed perspectives — independent statements, anonymous cross-review, then a chaired verdict preserving consensus and dissent.
 
+- **[v2-to-spec](./v2-to-spec/SKILL.md)**: Publish approved behavior and implementation plans as a consistent pair.
+- **[v2-to-tickets](./v2-to-tickets/SKILL.md)**: Split an approved pair into dependency-ordered, independently verifiable tickets.
+- **[v2-to-goal](./v2-to-goal/SKILL.md)**: Compile one frontier ticket and its dual-file authority into a portable goal.
+
 ## Model-invoked
 
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
@@ -44,3 +48,5 @@ Model- or user-reachable (rich trigger phrasing so the model can reach for them)
 - **[goal-crafter](./goal-crafter/SKILL.md)** — *(fork addition)* Standalone rules for a verifiable goal and its target-harness formatting, with a no-reinterview mode for already-approved evidence.
 
 - **[resolving-merge-conflicts](./resolving-merge-conflicts/SKILL.md)** — Work through an in-progress git merge or rebase conflict hunk by hunk, resolving by intent traced to each side's primary source, then finish the operation — never `--abort`.
+
+- **[v2-spec-executor](./v2-spec-executor/SKILL.md)**: Execute an approved pair with focused validation and an evidence receipt.

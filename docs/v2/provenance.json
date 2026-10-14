@@ -1,0 +1,24 @@
+{
+  "upstream_repository": "https://github.com/tt-a1i/matt-skills-with-to-goal",
+  "derived_from": "ee4052eb9ccd3cfe77607aa27695e01aa799a977",
+  "upstream_reviewed_through": "d09351ed27e20c6d962df410b0165da43516d8d5",
+  "upstream_version": "1.3.1-to-goal.1",
+  "imported_skill_sha256": {
+    "v2-to-spec": {
+      "SKILL.md": "e33b1822d1582a30fb993c66092516a1a65921591f2f71150b0d5bb14cecef12",
+      "agents/openai.yaml": "f318b6e5c11cadd9263ec8c43f0708c81477810508f84996f07e701c9bbd5d40"
+    },
+    "v2-to-tickets": {
+      "SKILL.md": "11e5d3ebb702a32194104863dfcf63a9be8f4d0b91e575532304e4c64846ed41",
+      "agents/openai.yaml": "86398f813be0cabb12b3809c2a835e983d72a1f84a36de51b5a4b859b93ec947"
+    },
+    "v2-to-goal": {
+      "SKILL.md": "d0fe321b879894f7fa5d7e58c3452e1b08e3922b4d5db697f41638c1513237ec",
+      "agents/openai.yaml": "19ebfa2cff15a365437aeecb835262f5102631c1d593331a86b209372a51f710"
+    },
+    "v2-spec-executor": {
+      "SKILL.md": "7325f79db24a5a9221c0d3cb827367b27bfdea6cc42d2557d9de6b94e704a95b",
+      "agents/openai.yaml": "146bdd3fcfd010acac56b98c3ce8e11f312be44870242c65bbf352024e62656d"
+    }
+  }
+}

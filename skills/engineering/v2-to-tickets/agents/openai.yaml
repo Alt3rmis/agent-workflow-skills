@@ -1,0 +1,7 @@
+interface:
+  display_name: "V2 To Tickets"
+  short_description: "Slice an approved V2 spec and plan into tickets"
+  default_prompt: "Use $v2-to-tickets to turn the approved V2 spec and implementation plan into tracer-bullet tickets."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "V2 To Goal"
+  short_description: "Compile a V2 ticket into an execution goal"
+  default_prompt: "Use $v2-to-goal to compile the current V2 frontier ticket, spec, and implementation plan into a fresh execution goal."
+
+policy:
+  allow_implicit_invocation: false

@@ -12,6 +12,10 @@ Before stating what a skill does or recommending a step be skipped, read that sk
 
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath.
 
+## Personal dual-file route
+
+For separate approved behavior and technical plans, recommend `/v2-to-spec`, optionally `/v2-to-tickets` for independent slices, and `/v2-to-goal` for portable handoff. `/v2-spec-executor` implements an approved pair directly or in an authorized fork. Do not route this pair through a single-spec executor that could discard its technical authority. These are choices, not mandatory steps; small clear work can proceed directly. Read the selected skill before advising.
+
 ## One optional upstream flow
 
 The flows below describe available approaches, not prerequisites for this fork. Approved work may come from a conversation, spec, issue, document, or repository evidence. Fork-owned boundary skills choose implementation and validation methods independently.
