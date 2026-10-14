@@ -83,3 +83,5 @@ Tickets may identify current modules or likely files when that bounds execution,
 ## Completion gate
 
 Finish with ticket paths, the dependency-ordered graph, the current frontier, and the coverage table. The gate passes only when every source criterion is covered, every ticket is a bounded verifiable unit, all blocking edges are explicit, and all published tickets point to the same source revision.
+
+The next implementation step can consume a ticket directly with `v2-implement`; Goal generation is optional for handoff, not a gate for executing each ticket.

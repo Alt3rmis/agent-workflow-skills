@@ -12,6 +12,7 @@
 | 已确定行为和技术方案，需要持久化 | `v2-to-spec` 生成版本一致的双文件 |
 | 双文件已批准，可以执行 | `v2-spec-executor`，可直接执行或使用已授权的 fork |
 | 需要独立交付或多所有者协作 | `v2-to-tickets` |
+| 已有 ticket，需要实施 | `v2-implement`，直接执行并回写证据 |
 | 需要跨上下文搬运一个执行单元 | `v2-to-goal` |
 
 详见 [设计](docs/v2/design.md)、[上游吸收记录](docs/v2/upstream-review.md)和[维护说明](docs/maintaining-fork.md)。不要同时加载旧源和本仓库的同名技能。原版技能保留其上游行为，包括部分原版的全量测试与提交指令；个人双文件工作优先使用 `v2-*`，项目规则始终优先。
@@ -68,6 +69,8 @@ npx skills@latest add Alt3rmis/agent-workflow-skills --skill=v2-spec-executor
 - [`wait-what`](./skills/productivity/wait-what/SKILL.md)。
 
 ### Model-invoked
+
+- [`v2-implement`](./skills/engineering/v2-implement/SKILL.md)：直接实施一张 ticket，无需先生成 Goal。
 
 - [`code-review`](./skills/engineering/code-review/SKILL.md)。
 - [`codebase-design`](./skills/engineering/codebase-design/SKILL.md)。

@@ -1,12 +1,12 @@
 ---
 name: v2-to-goal
-description: Compile one approved V2 frontier ticket together with its behavior spec and implementation plan into a verifiable execution goal. Use manually before a fresh implementation session; use --all only when the user explicitly requests a cross-ticket persistent goal.
+description: Compile one approved V2 frontier ticket together with its behavior spec and implementation plan into a verifiable execution goal. Use manually when a portable handoff summary is useful; use --all only when the user explicitly requests a cross-ticket persistent goal.
 disable-model-invocation: true
 ---
 
 # V2 To Goal
 
-Compile the dual-file planning pair and current ticket evidence into an execution contract. Keep the operation read-only: do not implement, edit tracker state, create branches, or write handoff files.
+Compile the dual-file planning pair and current ticket evidence into an optional portable execution contract. Direct ticket implementation does not require this skill; a fresh session alone is not a reason to add a Goal step. Keep the operation read-only: do not implement, edit tracker state, create branches, or write handoff files.
 
 ## Goal quality
 
@@ -66,6 +66,6 @@ Do not copy the entire plan. Carry only the ticket's technical slice plus pointe
 
 ## Deliver
 
-Output only a readiness note, one copy-pasteable goal block, and the session recommendation. A single ticket uses a fresh execution session; explicit `--all` is labeled cross-context and uses a persistent goal loop.
+Output only a readiness note, one copy-pasteable goal block, and the session recommendation. For a requested handoff, the goal can be pasted into a fresh execution session; explicit `--all` is labeled cross-context and uses a persistent goal loop.
 
 The goal is ready only when its acceptance criteria cover the ticket and mapped spec IDs without changing them, its execution order conforms to the plan, its fixed point and dirty state are recorded, and its validation commands are discoverable from repository evidence.

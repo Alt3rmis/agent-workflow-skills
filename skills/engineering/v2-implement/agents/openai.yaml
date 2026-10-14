@@ -1,0 +1,4 @@
+interface:
+  display_name: "V2 Implement"
+  short_description: "Implement one ticket with scoped validation"
+  default_prompt: "Use $v2-implement to implement the selected ticket against its approved V2 spec and implementation plan."
