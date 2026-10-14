@@ -28,6 +28,8 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 
 ## Model-invoked
 
+- **[v2-implement](./v2-implement/SKILL.md)**: Implement one V2 ticket directly with scoped validation and evidence.
+
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
 
 - **[prototype](./prototype/SKILL.md)**: Build a throwaway prototype to answer a design question: a single shareable HTML file for state/logic, or several toggleable UI variations.

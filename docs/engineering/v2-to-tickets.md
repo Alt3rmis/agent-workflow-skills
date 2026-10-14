@@ -33,3 +33,5 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 ## Where it fits
 
 This is part of the personal dual-file workflow. See [the design](https://github.com/Alt3rmis/agent-workflow-skills/blob/main/docs/v2/design.md) for preserved boundaries and [ask-matt](https://github.com/Alt3rmis/agent-workflow-skills/blob/main/docs/engineering/ask-matt.md) for optional routing. The upstream single-spec tools remain separate alternatives.
+
+A ticket can be executed directly with [v2-implement](https://github.com/Alt3rmis/agent-workflow-skills/blob/main/docs/engineering/v2-implement.md). Goal generation is optional, including when starting a fresh session.

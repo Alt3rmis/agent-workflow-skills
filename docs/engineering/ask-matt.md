@@ -84,7 +84,7 @@ Check the changelog for a rename before assuming it is gone. `writing-great-skil
 - Any claim it makes about another skill's behaviour shows up in the trace as it reading that skill's `SKILL.md`.
 - You recognise your own situation in what it hands back, rather than the nearest generic scenario.
 
-This personal fork also catalogs the dual-file route: `v2-to-spec`, `v2-to-tickets`, `v2-to-goal`, and `v2-spec-executor`. Select it when behavior and committed architecture have separate authority.
+This personal fork also catalogs the dual-file route: `v2-to-spec`, `v2-to-tickets`, `v2-to-goal`, `v2-implement`, and `v2-spec-executor`. Select it when behavior and committed architecture have separate authority.
 
 ## Where it fits
 
