@@ -1,0 +1,7 @@
+interface:
+  display_name: "V2 To Spec"
+  short_description: "Publish a behavior spec and technical plan"
+  default_prompt: "Use $v2-to-spec to publish the current decisions as spec.md and implementation-plan.md."
+
+policy:
+  allow_implicit_invocation: false

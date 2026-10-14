@@ -1,11 +1,11 @@
 {
-  "name": "matt-skills-with-to-goal",
-  "version": "1.3.1-to-goal.1",
+  "name": "agent-workflow-skills",
+  "version": "0.1.0",
   "private": true,
-  "description": "Loosely coupled skills for verifiable goal handoffs and optional forked execution",
+  "description": "Personal dual-file planning and evidence-based execution skills, with preserved upstream tools.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tt-a1i/matt-skills-with-to-goal"
+    "url": "https://github.com/Alt3rmis/agent-workflow-skills"
   },
   "license": "MIT",
   "scripts": {

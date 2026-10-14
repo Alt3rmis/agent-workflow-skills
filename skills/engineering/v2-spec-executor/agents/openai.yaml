@@ -1,0 +1,4 @@
+interface:
+  display_name: "V2 Spec Executor"
+  short_description: "Execute an approved V2 dual-file spec"
+  default_prompt: "Use $v2-spec-executor to implement the approved V2 spec and implementation plan in this execution task."

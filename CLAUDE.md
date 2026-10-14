@@ -24,6 +24,8 @@ To (re)link every skill outside `deprecated/` and `misc/` into the local harness
 
 Rejected directions get archived, not merely decided. When this fork turns down a skill direction or a design — its own calls, not only upstream feature requests — record it in `.out-of-scope/` under the convention `triage` already follows ([skills/engineering/triage/OUT-OF-SCOPE.md](./skills/engineering/triage/OUT-OF-SCOPE.md)): one file per concept, kebab-case concept name. The reason must be durable — scope, mechanism, or cost, never a temporary circumstance, because a decision resting on the current moment is a deferral rather than a rejection. Never record something that was in fact built; a false rejection poisons the concept matching that makes the directory worth reading.
 
-Before syncing upstream, rewriting fork history, publishing to `origin`, or refreshing local installs, read [docs/maintaining-fork.md](./docs/maintaining-fork.md). Use `npm run sync:upstream` for a guarded upstream rebase and `npm run sync:local` to update the unified local skill source plus Hermes.
+Before upstream review, publication, or local installation, read [docs/maintaining-fork.md](./docs/maintaining-fork.md). `npm run sync:upstream` only fetches and reports changes. Do not automatically rebase, merge, or update local installed skills. V2 identity, preserved differences, and reviewed-through provenance live under `docs/v2/`.
+
+The personal fork's default planning route is the dual-file V2 set. Preserve its invocation names, matching-revision gate, plan authority and permission boundaries. Upstream skills remain alternative workflows, not mandatory dependencies. Validation follows the changed artifacts; do not run unrelated application tests for prose edits.
 
 Use plain punctuation in repository prose, consistent with upstream: rewrite sentences with commas, colons, periods, parentheses, or conjunctions.

@@ -84,6 +84,8 @@ Check the changelog for a rename before assuming it is gone. `writing-great-skil
 - Any claim it makes about another skill's behaviour shows up in the trace as it reading that skill's `SKILL.md`.
 - You recognise your own situation in what it hands back, rather than the nearest generic scenario.
 
+This personal fork also catalogs the dual-file route: `v2-to-spec`, `v2-to-tickets`, `v2-to-goal`, and `v2-spec-executor`. Select it when behavior and committed architecture have separate authority.
+
 ## Where it fits
 
 `ask-matt` is a **standalone router** that sits over the whole set. It is never a step in a chain. It points into every chain, and the other docs pages link back to it so none of them has to redraw the graph. From here you most often land on [grill-with-docs](https://aihero.dev/skills-grill-with-docs), the head of the main flow, or [triage](https://aihero.dev/skills-triage), the on-ramp for work that arrived rather than work you started.

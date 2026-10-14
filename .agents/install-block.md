@@ -1,6 +1,6 @@
 # The canonical install block
 
-This fork has one public identity: `tt-a1i/matt-skills-with-to-goal`. Installation wording in `README.md`, changesets, and release material must use the commands below. Human-facing pages under `docs/` carry no install commands because their publishing surface supplies its own install widget.
+This fork has one public identity: `Alt3rmis/agent-workflow-skills`. Installation wording in `README.md`, changesets, and release material must use the commands below. Human-facing pages under `docs/` carry no install commands because their publishing surface supplies its own install widget.
 
 ## Claude Code — fork marketplace
 
@@ -9,20 +9,20 @@ This fork is not the `mattpocock-skills` package in Claude Code's official marke
 <canonical-block name="claude-code">
 
 ```bash
-claude plugin marketplace add tt-a1i/matt-skills-with-to-goal
-claude plugin install matt-skills-with-to-goal@tt-a1i
+claude plugin marketplace add Alt3rmis/agent-workflow-skills
+claude plugin install agent-workflow-skills@alt3rmis
 ```
 
 </canonical-block>
 
 ## Codex and other agents — skills.sh
 
-[skills.sh](https://skills.sh/tt-a1i/matt-skills-with-to-goal) copies editable Skill files into a supported Agent Skills harness.
+[skills.sh](https://skills.sh/Alt3rmis/agent-workflow-skills) copies editable Skill files into a supported Agent Skills harness.
 
 <canonical-block name="skills-sh-whole-set">
 
 ```bash
-npx skills@latest add tt-a1i/matt-skills-with-to-goal
+npx skills@latest add Alt3rmis/agent-workflow-skills
 ```
 
 Choose only the Skills that solve the workflow boundary you need. Each Skill is independently installable; no setup or companion Skill is required unless its own documentation names a concrete tool dependency.
@@ -34,7 +34,7 @@ For one named Skill:
 <canonical-block name="skills-sh-one-skill">
 
 ```bash
-npx skills@latest add tt-a1i/matt-skills-with-to-goal --skill=<name>
+npx skills@latest add Alt3rmis/agent-workflow-skills --skill=<name>
 ```
 
 ```bash
