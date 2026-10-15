@@ -8,6 +8,14 @@ Invoke /v2-to-spec explicitly; it is not automatically selected. Use the dual-fi
 
 ## Common questions
 
+**Can an existing preview or test fixture be assumed to cover a UI flow?**
+
+No. The plan distinguishes what the fixture actually exercises, what has only been inspected in code, and what needs extending. A static view can show layout without owning state or delivering a save callback. Known fixture work belongs with the first consumer checkpoint; an architecture-changing uncertainty remains open.
+
+**Does this add a testing phase before every plan can be approved?**
+
+No. Planning inspects relevant evidence without implementing or requiring an application run. A visual-only change starts with a representative render and its required checks. An interaction change starts with the smallest real action-to-outcome path after implementation is authorized, before broad regression work.
+
 **Must I repeat decisions already approved in conversation?**
 
 No. The skill synthesizes settled evidence. Only missing or contradictory decisions prevent marking the pair ready.
@@ -29,6 +37,8 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.
+- The first implementation checkpoint reveals whether the chosen UI fixture can prove the required behavior.
+- A small visual edit does not acquire an unrelated save or navigation test harness.
 
 ## Where it fits
 

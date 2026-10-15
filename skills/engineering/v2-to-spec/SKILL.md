@@ -31,15 +31,27 @@ A lower layer may add detail but cannot change a higher layer. Any material conf
 
 1. Read the relevant repository instructions, requirements, contracts, ADRs, implementation, and tests. Use the project domain vocabulary.
 2. Classify every settled statement as behavioral, technical, open, rejected, or out of scope. Preserve decisions; do not invent missing ones.
-3. Choose the highest practical behavior validation seam. Reuse an existing seam; default to one unless an external boundary or distinct acceptance evidence needs another. Do not ask again about an already approved seam.
+3. Choose a validation seam that proves the affected behavior at proportionate cost. Inspect the existing consumer, fixture and relevant tests before committing to reuse; a fixture's name is not evidence of its capabilities. For UI work, apply the guidance below. Preserve an already approved seam unless concrete evidence shows a gap.
 4. Draft both files with the same title, feature slug, status, and revision. Give each requirement a stable ID.
 5. Run a cross-file audit:
    - every plan item maps to at least one `AC-*` or `INV-*`;
    - every acceptance criterion has an owner, data/state path, and verification seam in the plan;
+   - the first implementation checkpoint exercises the chosen seam, with required fixture work and evidence limits explicit;
    - technical names, file paths, type shapes, and migration mechanics appear only in the plan;
    - open product or architecture decisions appear as blockers, not guessed solutions.
 6. Publish a consistent pair. Keep both draft until both are complete and audited; do not claim a filesystem transaction across two writes. If publication is interrupted, neither is ready until their matching revision is rechecked.
 7. Recommend direct or optional forked `v2-spec-executor` execution for bounded work; recommend tickets when independent slices or ownership boundaries justify them. Compaction alone does not require tickets. Invoking this skill does not authorize code changes, commits, pushes, or tracker publication beyond the user's request.
+
+## Ground UI validation
+
+Keep these decisions in the existing migration sequence and testing strategy, not a separate checklist or mandatory planning stage:
+
+- **Visual-only change:** start with the changed component rendered in a representative state, then the required layout variants and affected interaction checks. Reuse valid interaction evidence where applicable; adding text or spacing alone does not require a new persistence or navigation harness.
+- **Interaction or state change:** make the first checkpoint the thinnest real consumer path through action, state change and visible outcome, including return or reopen when affected. Exercise it before expanding implementation and regression coverage. Include first use without saved state when supported; preloaded fixtures alone cannot prove that path.
+
+Inspect only the fixture capabilities this path needs: production state owner, action and return callbacks, scheduler or event delivery, and boundary response shapes. Distinguish reusable capabilities supported by current evidence, code-inspected capabilities awaiting execution, and known extensions needed. A static preview can prove layout, not save/return behavior. Lower-level tests supplement rather than replace affected UI evidence.
+
+Specify the smallest fixture adaptation alongside its consumer and the observable result that ends the first checkpoint. Planned fixture work is not itself a readiness blocker when its scope and approach are known. Unknown feasibility that could change architecture or acceptance remains an open technical question. Planning does not authorize implementation or require running the application; label unexecuted checks honestly and schedule them first after implementation is authorized.
 
 ## `spec.md` template
 
@@ -85,7 +97,10 @@ Keep this file readable by product, QA, and engineering. Describe observable beh
 ## State and data flow
 ## Public interfaces and contracts
 ## Migration sequence
+- First checkpoint: <smallest consumer path and observable result, before broader implementation>
 ## Testing strategy
+- Reuse: <relevant evidence and its limits; inspected but unexecuted capabilities>
+- Gaps: <required fixture adaptations and remaining scoped checks>
 ## Observability and failure handling
 ## Rejected alternatives
 ## Open technical questions

@@ -12,6 +12,10 @@ Invoke /v2-to-tickets explicitly; it is not automatically selected. Use the dual
 
 No. Prefer complete behavior slices with explicit blockers. Keep parent issue relationships separate from dependency edges.
 
+**Where does missing UI fixture support belong?**
+
+Keep the smallest required adaptation in the ticket that exercises it, along with the plan's first observable consumer checkpoint. A known fixture gap does not require a separate setup ticket. A fixture that cannot support the approved approach is a plan issue to reconcile before publication, not a hidden implementation assumption.
+
 **Does the V2 name mean an experimental second version?**
 
 No. The name remains a compatible invocation entry. Repository releases use an independent version.
@@ -29,6 +33,7 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.
+- A ticket identifies the first working consumer path and its fixture needs, not just a list of eventual test suites.
 
 ## Where it fits
 

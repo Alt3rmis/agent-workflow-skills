@@ -12,6 +12,10 @@ Invoke /v2-spec-executor or let the agent select it for an explicitly approved p
 
 Yes, when both are ready, their revisions match, and implementation is authorized. A missing pair or incompatible revision remains a blocker.
 
+**Can passing model tests stand in for the UI flow being changed?**
+
+No. The executor reaches the plan's first consumer checkpoint before expanding regressions. Visual work starts with the changed component rendered; changed interactions require the real action and visible outcome. When a UI check fails, the next attempt follows evidence from the rendered state, hierarchy and callbacks rather than another guessed selector.
+
 **Does the V2 name mean an experimental second version?**
 
 No. The name remains a compatible invocation entry. Repository releases use an independent version.
@@ -29,6 +33,8 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.
+- The real consumer path works before implementation spreads across the remaining cases.
+- Required UI results are retained and reused while they still apply, instead of recaptured only for the final receipt.
 
 ## Where it fits
 

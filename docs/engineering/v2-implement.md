@@ -22,12 +22,18 @@ No. The ticket and its sources already provide the execution contract. Use [v2-t
 
 The upstream alternative retains its full-suite and commit defaults. This skill respects the V2 technical plan, validates the changed scope, and requires separate authority for commits and external writes. It does not invoke the old implement skill.
 
+**How does it keep UI validation from becoming repeated guesswork?**
+
+The first checkpoint reaches a rendered component for visual work, or a real action and visible result for interaction work, before broader coverage. A failure is traced through the UI hierarchy and callbacks before the next attempt. Tests assert the intended behavior instead of incidental scroll coordinates, and valid results are reused rather than repeated at handoff.
+
 ## It's working if
 
 - Passing one ticket does not depend on finishing unrelated siblings.
 - Modified tests actually run, while a documentation edit avoids unrelated builds.
 - A blocked ticket stays unresolved with a concrete explanation.
 - Successful authorized local execution leaves acceptance evidence on that ticket.
+- A fixture that cannot deliver the required callback is discovered at the first checkpoint, not after all lower-level tests pass.
+- Each UI retry addresses an observed cause while retaining the intended behavior check.
 
 ## Where it fits
 

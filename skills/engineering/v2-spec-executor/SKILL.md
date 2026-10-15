@@ -39,12 +39,12 @@ External authority: <granted and ungranted actions>
 
 ## Implement
 
-1. Trace every `AC-*` and `INV-*` to its plan coverage, current behavior, smallest implementation seam, and observable proof.
-2. Follow the plan's ownership, state/data flow, interface, migration order, and testing strategy. Use test-first development where practical.
+1. Trace every `AC-*` and `INV-*` to its plan coverage, current behavior, smallest implementation seam, and observable proof. If no first checkpoint is named, derive it within the approved sequence and seam; missing wording alone does not require replanning.
+2. Follow the plan's ownership, state/data flow, interface, migration order, and testing strategy. Complete its first consumer checkpoint, including required fixture adaptations, before expanding implementation and regressions. Verify public fields, access and target dependencies at the consumer seam with a focused test. For visual-only UI work, render the changed component first; for changed interaction/state, exercise the real action and visible outcome. Use test-first development where practical.
 3. Make the narrowest complete vertical change. Keep deviations explicit:
    - incidental adaptation: renamed or relocated code with unchanged architecture; record it in the receipt;
    - material deviation: changed ownership, contract, state flow, migration strategy, or behavior; stop and return to planning.
-4. Run checks proportional to the changed behavior and repository rules. Documentation-only changes need document checks, not unrelated builds or tests. Modified tests must actually execute; no-match or all-skipped results are not passes. Reuse evidence only when relevant code, dependencies, configuration, tools and targets remain unchanged. Do not automatically append a full suite.
+4. Run checks proportional to the changed behavior and repository rules. Documentation-only changes need document checks, not unrelated builds or tests. Modified tests must actually execute; no-match or all-skipped results are not passes. On a UI failure, locate the failing layer using rendered state, UI hierarchy and action/callback evidence before rerunning. Prefer semantic targets and sufficient visibility; reserve exact coordinates or timing assertions for explicit requirements. Fix the evidenced cause without weakening the behavior assertion. Retain required screenshots and results before temporary artifacts expire, and reuse them while relevant code, dependencies, configuration, tools and targets remain unchanged. Do not automatically append a full suite.
 5. Review the final diff against the recorded fixed point, every spec criterion, and every committed plan decision. Follow required repository review rules; use specialist skills when useful, but do not require an optional skill to exist. Address in-scope findings.
 6. Inspect final worktree state and separate this execution's changes from pre-existing work.
 

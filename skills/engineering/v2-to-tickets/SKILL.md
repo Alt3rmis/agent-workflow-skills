@@ -29,9 +29,9 @@ Stop with `V2 TICKETS NOT READY` when a lower artifact conflicts with a higher o
 
 ## Draft the graph
 
-1. Inspect the current implementation only enough to validate the plan's seams and blast radius.
+1. Inspect the current implementation only enough to validate the plan's seams and blast radius. Reuse its capability evidence and known fixture gaps; reconcile an unsupported seam with the plan before publishing tickets, rather than promising coverage from a fixture's name.
 2. Split the plan into tracer-bullet slices that deliver a narrow, complete, testable behavior path and form a bounded implementation unit. Prefer a fresh context when useful, without making zero compaction an acceptance condition.
-3. Preserve explicit plan sequence and identify genuine blocking edges. A ticket with no blockers is frontier-ready.
+3. Preserve explicit plan sequence, including each slice's first consumer checkpoint, and identify genuine blocking edges. Keep required fixture adaptations with the behavior they verify rather than creating setup-only tickets by default. A ticket with no blockers is frontier-ready.
 4. Use expand-migrate-contract tickets only when a wide mechanical refactor cannot land green as vertical slices.
 5. Build a coverage table proving every `AC-*`, `INV-*`, migration step, and risk gate is owned by at least one ticket. Avoid accidental duplicate ownership; identify intentional shared verification.
 6. Present the proposed titles, blockers, delivered behavior, and coverage IDs. Obtain approval for unresolved granularity, edges, and merge/split choices before publication; reuse explicit approval already present instead of asking twice.
@@ -71,7 +71,8 @@ Number blockers first. Do not rewrite either source artifact during ticket publi
 - [ ] Independently checkable ticket criterion
 
 ## Validation
-- <smallest relevant behavior seam and repository gates>
+- First checkpoint: <plan-derived consumer path, required fixture adaptation and observable result>
+- <reusable evidence, remaining scoped checks and repository gates>
 
 **Evidence:**
 
