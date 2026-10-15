@@ -8,6 +8,10 @@ Invoke /v2-to-tickets explicitly; it is not automatically selected. Use the dual
 
 ## Common questions
 
+**Does ticketing turn manual UI acceptance into automated tests?**
+
+No. Tickets retain the plan's validation methods and responsible actors. They distinguish an increment ready for developer inspection from final acceptance, so pending human checks neither disappear nor become new automation requirements.
+
 **Must each ticket be a different software layer?**
 
 No. Prefer complete behavior slices with explicit blockers. Keep parent issue relationships separate from dependency edges.
@@ -26,6 +30,7 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 
 ## It's working if
 
+- UI handoffs show completed agent checks and any remaining developer acceptance separately.
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.

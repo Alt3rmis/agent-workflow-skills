@@ -24,7 +24,7 @@ Stop when either artifact is missing, draft, revision-mismatched, contradictory,
 
 ## Lock execution
 
-Inspect repository instructions, branch, `HEAD`, dirty state, recent relevant history, implementation, and agreed test seam. Record the actual pre-implementation `HEAD` as the review fixed point. Preserve unrelated user changes.
+Inspect repository instructions, branch, `HEAD`, dirty state, recent relevant history, implementation, and agreed validation methods and actors. Record the actual pre-implementation `HEAD` as the review fixed point. Preserve unrelated user changes.
 
 Send a short lock before editing:
 
@@ -55,6 +55,10 @@ Local implementation and validation are in scope. Commit, push, PR, merge, deplo
 Delegate only when authorized and the task is independent enough to justify handoff. Give an implementer the contract, exact workspace, file ownership, and required evidence; the implementer owns the local change-validation-fix loop. If tools are only available to the parent, return exact diagnostics to the same implementer. The parent reviews integration changes without repeating still-valid checks. Coordinate exclusive use of shared build directories and runtime devices; do not edit relevant inputs during verification.
 
 Before a context handoff or compaction, preserve source revisions, baseline plus dirty state, decisions, validation evidence, running operations and the next step. On resumption, reread the pair and reconcile actual workspace state before continuing. Split or return a partial receipt when state cannot be recovered or scope is no longer bounded; do not silently drop requirements or declare incomplete work complete.
+
+## Developer acceptance
+
+Follow the plan's validation methods, actors, scope, and handoff gate. For UI increments, complete agent-owned static and rendered checks before handing off; do not expand developer-owned experience checks into automated UI tests. Batch evidenced fixes and recheck affected areas, reusing applicable evidence. Stop tuning when the agreed agent checks pass and hand off the inspectable increment. Report pending developer acceptance in the receipt as partially completed; required acceptance remains unresolved until evidence arrives. Missing agent checks cannot be relabeled as developer acceptance.
 
 ## Return receipt
 

@@ -57,12 +57,12 @@ Include:
 - **Authority:** spec path/revision, plan path/revision, ticket path, and precedence rule;
 - **Current state:** branch, fixed point, relevant dirty state, proven work, gaps, and existing failures;
 - **Execution order:** the shortest plan-conformant path through this ticket;
-- **Completion criteria:** every ticket criterion plus mapped `AC-*`/`INV-*`, validation, review, authorized commit, and final-worktree gates;
+- **Completion criteria:** every ticket criterion plus mapped `AC-*`/`INV-*`, validation, review, authorized commit, and final-worktree gates; preserve each validation method, actor, scope, expected evidence, and any separate handoff/final acceptance gates;
 - **Implementation constraints:** the ticket's plan slice, module ownership, contracts, non-goals, and permitted adaptation to repository drift;
 - **Context:** files, decisions, behavior seam, and commands to inspect first;
 - **External authority:** preserve explicit permissions; default push, PR, merge, deployment, tracker edits, data changes, real-service calls, and messages to ungranted.
 
-Do not copy the entire plan. Carry only the ticket's technical slice plus pointers to its authority.
+Do not copy the entire plan. Carry only the ticket's technical slice plus pointers to its authority. Pending developer acceptance stays pending; do not translate it into mandatory UI automation or a goal that repeatedly runs checks while waiting for human evidence.
 
 ## Deliver
 
