@@ -8,6 +8,10 @@ Invoke /v2-to-goal explicitly; it is not automatically selected. Use the dual-fi
 
 ## Common questions
 
+**Will a goal keep running UI checks while it waits for my inspection?**
+
+No. It preserves the agreed handoff gate and developer-owned acceptance. The executor should report the pending evidence and hand off, rather than invent more checks or declare the criterion passed.
+
 **Must goal-crafter be installed, and does this create a persistent goal?**
 
 No. It can produce a portable contract itself. Creating a persistent goal is a separate, explicitly requested action.
@@ -26,6 +30,7 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 
 ## It's working if
 
+- UI handoffs show completed agent checks and any remaining developer acceptance separately.
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.

@@ -43,6 +43,8 @@ Delegate only within existing authority and where independent work justifies it.
 
 ## Finish this ticket
 
+Follow the plan's validation methods, actors, scope, and handoff gate. For UI increments, complete agent-owned static and rendered checks, batch evidenced fixes, and hand off when those checks pass. Preserve developer-owned experience acceptance without turning it into extra UI automation or repeated check runs. Report pending developer acceptance as partial and leave the ticket unresolved; missing agent checks remain agent verification gaps.
+
 When all selected acceptance criteria and necessary checks pass, append concise evidence and mark only this ticket resolved if tracker mutation is authorized. Follow the repository's status vocabulary. Preserve previous evidence and comments; do not close the parent, advance sibling tickets, or create extra receipt files by default.
 
 If blocked or incomplete, leave the ticket unresolved and record the remaining criterion, failure or missing evidence in its authorized Comments/Evidence area. If writes are unavailable, include the proposed update in the response. Never mark resolved merely because code is written.
