@@ -33,7 +33,7 @@ Stop with `V2 TICKETS NOT READY` when a lower artifact conflicts with a higher o
 2. Split the plan into tracer-bullet slices that deliver a narrow, complete, testable behavior path and form a bounded implementation unit. Put an uncertain consumer or validation seam in the earliest relevant slice, before dependent scenarios multiply. Keep implementation and its behavior proof together, rather than postponing all tests to a final ticket. Prefer a fresh context when useful, without making zero compaction an acceptance condition.
 3. Preserve explicit plan sequence and identify genuine blocking edges. A ticket with no blockers is frontier-ready.
 4. Use expand-migrate-contract tickets only when a wide mechanical refactor cannot land green as vertical slices.
-5. Build a coverage table proving every `AC-*`, `INV-*`, migration step, and risk gate is owned by at least one ticket. Avoid accidental duplicate ownership; identify intentional shared verification. Assign shared validation setup once and have dependent tickets reference its evidence. Create a separate infrastructure ticket only when it is a genuine independently scoped prerequisite, not a default ceremony.
+5. Build a coverage table proving every `AC-*`, `INV-*`, migration step, and risk gate is owned by at least one ticket. Preserve the plan's validation methods, actors, scope, expected evidence, and any separate handoff/final acceptance gates. Avoid accidental duplicate ownership; identify intentional shared verification. Assign shared validation setup once and have dependent tickets reference its evidence. Create a separate infrastructure ticket only when it is a genuine independently scoped prerequisite, not a default ceremony. A developer inspection criterion does not automatically require a new automated test.
 6. Present the proposed titles, blockers, delivered behavior, and coverage IDs. Obtain approval for unresolved granularity, edges, and merge/split choices before publication; reuse explicit approval already present instead of asking twice.
 
 ## Publish
@@ -71,7 +71,9 @@ Number blockers first. Do not rewrite either source artifact during ticket publi
 - [ ] Independently checkable ticket criterion
 
 ## Validation
-- <smallest relevant behavior seam and repository gates; reference reusable setup evidence or identify the first probe for an unproven capability>
+- <criterion, agreed validation method, responsible actor, scope, expected evidence, and repository gates>
+- <reference reusable setup evidence or identify the first probe for an unproven capability>
+- <agent handoff gate and final acceptance gate, if distinct; pending developer checks remain unresolved>
 
 **Evidence:**
 

@@ -8,6 +8,10 @@ Invoke /v2-to-spec explicitly; it is not automatically selected. Use the dual-fi
 
 ## Common questions
 
+**Does every UI criterion need an automated test?**
+
+No. The plan assigns a validation method, responsible actor, scope, and expected evidence to each criterion. Static UI properties need agent checks against the design and relevant rendered output. Developer-owned experience checks remain explicit manual acceptance. Changed logic still receives focused behavior checks, and existing repository contracts remain binding.
+
 **Must I repeat decisions already approved in conversation?**
 
 No. The skill synthesizes settled evidence. Only missing or contradictory decisions prevent marking the pair ready.
@@ -30,6 +34,7 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 
 ## It's working if
 
+- UI handoffs show completed agent checks and any remaining developer acceptance separately.
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.

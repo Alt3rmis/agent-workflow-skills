@@ -14,6 +14,10 @@ A selected ticket with resolved blockers, acceptance criteria, and references to
 
 ## Common questions
 
+**Can a UI ticket be handed back for my inspection?**
+
+Yes. The agent completes its assigned static and rendered checks before handoff. It records any pending developer acceptance and leaves the ticket unresolved until that evidence arrives, without adding repeated UI automation to fill the wait.
+
 **Do I need to generate a Goal for every ticket?**
 
 No. The ticket and its sources already provide the execution contract. Use [v2-to-goal](https://github.com/Alt3rmis/agent-workflow-skills/blob/main/docs/engineering/v2-to-goal.md) only when a portable summary helps an explicit handoff. A fresh session alone does not require one.
@@ -28,6 +32,7 @@ The upstream alternative retains its full-suite and commit defaults. This skill 
 
 ## It's working if
 
+- UI handoffs show completed agent checks and any remaining developer acceptance separately.
 - Passing one ticket does not depend on finishing unrelated siblings.
 - Modified tests actually run, while a documentation edit avoids unrelated builds.
 - A blocked ticket stays unresolved with a concrete explanation.

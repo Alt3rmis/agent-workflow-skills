@@ -8,6 +8,10 @@ Invoke /v2-spec-executor or let the agent select it for an explicitly approved p
 
 ## Common questions
 
+**Can I inspect UI increments myself?**
+
+Yes, when the approved plan assigns that acceptance to you. The agent first completes its static and rendered checks, then hands off the increment with the remaining inspection scope. Pending required developer acceptance is reported as partial completion, not a pass.
+
 **Can I pass two approved files without a READY marker?**
 
 Yes, when both are ready, their revisions match, and implementation is authorized. A missing pair or incompatible revision remains a blocker.
@@ -30,6 +34,7 @@ No. The consuming repository owns platform, commands, validation scope, and exte
 
 ## It's working if
 
+- UI handoffs show completed agent checks and any remaining developer acceptance separately.
 - Behavior and architecture remain consistent through the handoff.
 - Already settled decisions are retained without another interview.
 - Missing evidence is visible rather than reported as completed work.
