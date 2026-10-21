@@ -12,6 +12,10 @@ Invoke /v2-to-tickets explicitly; it is not automatically selected. Use the dual
 
 No. Prefer complete behavior slices with explicit blockers. Keep parent issue relationships separate from dependency edges.
 
+**Should testing infrastructure always be a separate first ticket?**
+
+No. The earliest relevant behavior slice proves an uncertain seam before dependent scenarios expand. Shared setup gets one owner and reusable evidence; a separate infrastructure ticket is justified only by a real, independently scoped prerequisite. Tests stay with their behavior, rather than accumulating in a final ticket.
+
 **Does the V2 name mean an experimental second version?**
 
 No. The name remains a compatible invocation entry. Repository releases use an independent version.

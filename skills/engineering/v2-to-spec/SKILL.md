@@ -31,11 +31,12 @@ A lower layer may add detail but cannot change a higher layer. Any material conf
 
 1. Read the relevant repository instructions, requirements, contracts, ADRs, implementation, and tests. Use the project domain vocabulary.
 2. Classify every settled statement as behavioral, technical, open, rejected, or out of scope. Preserve decisions; do not invent missing ones.
-3. Choose the highest practical behavior validation seam. Reuse an existing seam; default to one unless an external boundary or distinct acceptance evidence needs another. Do not ask again about an already approved seam.
+3. Choose the highest practical behavior validation seam. Reuse an existing seam; default to one unless an external boundary or distinct acceptance evidence needs another. Distinguish capabilities supported by inspected code or applicable run evidence from extensions to build and assumptions to probe. Name the first complete behavior slice that will prove an uncertain seam during implementation. Planning does not require running tests or re-approving an agreed seam; an unresolved architecture decision is still a blocker.
 4. Draft both files with the same title, feature slug, status, and revision. Give each requirement a stable ID.
 5. Run a cross-file audit:
    - every plan item maps to at least one `AC-*` or `INV-*`;
    - every acceptance criterion has an owner, data/state path, and verification seam in the plan;
+   - for timing, identity or asynchronous ownership requirements, trace the defining event or value from its producer through the consumer to the terminal condition. Account for intervening work, cancellation and replacement where relevant. Name any missing interface as planned work; an AC label or a test-harness name alone is not coverage;
    - technical names, file paths, type shapes, and migration mechanics appear only in the plan;
    - open product or architecture decisions appear as blockers, not guessed solutions.
 6. Publish a consistent pair. Keep both draft until both are complete and audited; do not claim a filesystem transaction across two writes. If publication is interrupted, neither is ready until their matching revision is rechecked.

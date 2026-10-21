@@ -18,6 +18,10 @@ A selected ticket with resolved blockers, acceptance criteria, and references to
 
 No. The ticket and its sources already provide the execution contract. Use [v2-to-goal](https://github.com/Alt3rmis/agent-workflow-skills/blob/main/docs/engineering/v2-to-goal.md) only when a portable summary helps an explicit handoff. A fresh session alone does not require one.
 
+**Why does the agent keep changing tests one failure at a time?**
+
+The executor first proves a small consumer path and checks that its fixture can drive it. Repeated failures trigger evidence-led diagnosis of product behavior, fixtures, configuration or the runner, rather than successive timing adjustments. A resumed task retains known unavailable entries and rejected hypotheses instead of repeating them.
+
 **Why not use the original implement skill?**
 
 The upstream alternative retains its full-suite and commit defaults. This skill respects the V2 technical plan, validates the changed scope, and requires separate authority for commits and external writes. It does not invoke the old implement skill.
