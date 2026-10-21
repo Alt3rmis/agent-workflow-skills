@@ -33,13 +33,19 @@ For a local tracker whose repository conventions authorize lifecycle updates, ma
 
 ## Implement and verify
 
-1. Trace the selected acceptance criteria to the smallest complete behavior slice and observable checks. Follow the approved plan's ownership, interfaces, migration order, and test seams. Record incidental path adaptations; reconcile material architecture or behavior changes with their owning source before proceeding.
-2. Implement and fix within the same loop. Use test-first development where useful; preserve meaningful assertions. Optional testing or review skills are aids, not prerequisites.
+1. Before editing, trace this ticket's timing, identity and ownership requirements through actual producers, consumers and terminal conditions, including intervening work and cancellation. Follow the plan's interfaces and migration order; reconcile material conflicts now rather than during final review. Record incidental path adaptations.
+2. For behavior changes, confirm the smallest validation entry from configuration or applicable evidence: target, selection, host dependencies and runner. Discovery alone does not prove executability. Prove one complete consumer behavior before expanding scenarios; probe uncertain fixtures for the consumed event channel, subscription readiness, actual intercepted method, controlled clock and cancellation cleanup. Use existing barriers instead of scheduling sleeps. No full baseline suite or extra report is required; optional testing or review skills remain aids.
 3. Run checks proportional to this ticket and repository rules. Documentation-only changes need relevant document checks. Added or changed tests must run and select the intended cases; a build, no matches, or all skipped cases cannot stand in for passing tests. Do not append a full suite by default.
 4. Reuse evidence only while its relevant code, dependencies, configuration, toolchain, target and test scope remain unchanged. If an implementer lacks a tool, the parent may run the exact check and return diagnostics to that same implementer. Serialize shared build and runtime resources; never overlap uncertain running jobs.
 5. Review the final diff against this ticket's criteria and applicable spec and plan constraints. Follow repository-required reviews and resolve in-scope findings. Distinguish unavailable checks or environmental failures from implementation defects; required missing evidence prevents a completed result.
 
-Delegate only within existing authority and where independent work justifies it. Each implementer owns its fix-and-verify loop; the parent integrates without repeating valid checks. Before compaction or handoff, preserve ticket/source revisions, baseline and dirty state, evidence, active operations, and next step. Resume by reconciling the actual workspace. A Goal is optional when an explicit handoff benefits from it.
+Delegate only within existing authority and where independent work justifies it. Each implementer owns its fix-and-verify loop; the parent integrates without repeating valid checks. Before compaction or handoff, preserve ticket/source revisions, baseline and dirty state, evidence, working and unavailable validation entries, rejected hypotheses, latest failure logs, active job handles and the next distinguishing check. Resume by reconciling the actual workspace. A Goal is optional when an explicit handoff benefits from it.
+
+### Failure convergence
+
+Classify failures as product behavior, fixture, compile/configuration or runner/environment. Read the relevant diagnostics together and fix related compile errors in one batch. For repeated behavioral failures, follow repository diagnosis thresholds; absent those, diagnose after two failures with the same unresolved symptom or the first execution deadline overrun. Renaming tests or changing waits does not reset the count. Before another experiment, state new evidence, hypothesis, one distinguishing change and expected observation. Preserve assertions that detect the original defect; rerun the smallest affected check before wider scoped regression.
+
+An RPC wait timeout does not prove the job stopped. Track its handle and confirm termination before restarting or switching runners. An unavailable entry is a scoped validation gap, not permission to redesign product code or build unrelated infrastructure.
 
 ## Finish this ticket
 

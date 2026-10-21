@@ -39,9 +39,9 @@ External authority: <granted and ungranted actions>
 
 ## Implement
 
-1. Trace every `AC-*` and `INV-*` to its plan coverage, current behavior, smallest implementation seam, and observable proof.
-2. Follow the plan's ownership, state/data flow, interface, migration order, and testing strategy. Use test-first development where practical.
-3. Make the narrowest complete vertical change. Keep deviations explicit:
+1. Before editing, trace every `AC-*` and `INV-*` to its plan coverage, current behavior and observable proof. For timing, identity and ownership, check actual producers, consumers and terminal conditions, including intervening work and cancellation. An ID mapping is not proof of a working interface; resolve material conflicts before expanding implementation.
+2. For behavior changes, confirm the selected target, host dependencies and runner from configuration or applicable evidence; a discovered test name is not proof it can run. Follow the plan's migration order and probe uncertain fixtures in the first focused check: consumed event channel, registered subscriber, actual intercepted method, clock advancement and cancellation cleanup. Prefer existing barriers to scheduling sleeps. No full baseline suite or extra report is required.
+3. Prove the narrowest complete vertical change through its real consumer before expanding to adjacent scenarios. Use test-first development where practical. Keep deviations explicit:
    - incidental adaptation: renamed or relocated code with unchanged architecture; record it in the receipt;
    - material deviation: changed ownership, contract, state flow, migration strategy, or behavior; stop and return to planning.
 4. Run checks proportional to the changed behavior and repository rules. Documentation-only changes need document checks, not unrelated builds or tests. Modified tests must actually execute; no-match or all-skipped results are not passes. Reuse evidence only when relevant code, dependencies, configuration, tools and targets remain unchanged. Do not automatically append a full suite.
@@ -50,11 +50,17 @@ External authority: <granted and ungranted actions>
 
 Local implementation and validation are in scope. Commit, push, PR, merge, deployment, tracker mutation, production data, costly real services, and messages require explicit authorization.
 
+### Failure convergence
+
+Distinguish product, fixture, compile/configuration and runner/environment failures before editing. Read the relevant diagnostics together; fix related compile errors in one batch. For repeated behavior failures, apply repository diagnosis thresholds, or otherwise diagnose after two failures with the same unresolved symptom or the first execution deadline overrun. Changing assertions or waits does not reset the count. The next experiment must identify new evidence, a hypothesis, one distinguishing change and its expected observation. Keep assertions that detect the defect, then expand from the focused fix to affected regression checks.
+
+Retain exact job and result handles. An RPC wait timeout does not prove execution ended; confirm termination before restarting or switching runners. Missing validation infrastructure is a scoped gap to resolve, not permission to change product contracts or build unrelated tooling.
+
 ## Delegation and continuation
 
 Delegate only when authorized and the task is independent enough to justify handoff. Give an implementer the contract, exact workspace, file ownership, and required evidence; the implementer owns the local change-validation-fix loop. If tools are only available to the parent, return exact diagnostics to the same implementer. The parent reviews integration changes without repeating still-valid checks. Coordinate exclusive use of shared build directories and runtime devices; do not edit relevant inputs during verification.
 
-Before a context handoff or compaction, preserve source revisions, baseline plus dirty state, decisions, validation evidence, running operations and the next step. On resumption, reread the pair and reconcile actual workspace state before continuing. Split or return a partial receipt when state cannot be recovered or scope is no longer bounded; do not silently drop requirements or declare incomplete work complete.
+Before a context handoff or compaction, preserve source revisions, baseline plus dirty state, decisions, validation evidence, working and unavailable test entries, rejected hypotheses, latest failure logs, active job handles and the next distinguishing check. On resumption, reread the pair and reconcile actual workspace state before continuing. Split or return a partial receipt when state cannot be recovered or scope is no longer bounded; do not silently drop requirements or declare incomplete work complete.
 
 ## Developer acceptance
 

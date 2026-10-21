@@ -16,6 +16,10 @@ Yes, when the approved plan assigns that acceptance to you. The agent first comp
 
 Yes, when both are ready, their revisions match, and implementation is authorized. A missing pair or incompatible revision remains a blocker.
 
+**Does writing the main implementation mean only test cleanup remains?**
+
+No. Critical contract paths are checked before expanding implementation, and one consumer behavior is proved before adjacent scenarios. The same verification loop as ticket execution distinguishes product defects from fixture and runner failures. It does not require ticket conversion, an extra approval or a full baseline suite.
+
 **Does the V2 name mean an experimental second version?**
 
 No. The name remains a compatible invocation entry. Repository releases use an independent version.

@@ -16,6 +16,10 @@ No. The plan assigns a validation method, responsible actor, scope, and expected
 
 No. The skill synthesizes settled evidence. Only missing or contradictory decisions prevent marking the pair ready.
 
+**Why can a plan cover every acceptance ID and still cause late rework?**
+
+An ID mapping can hide a missing data path. For timing and ownership requirements, the plan must identify the defining event, its consumer and any intervening work. Validation capabilities are identified as supported, needing extension or still unproven, so an existing fixture name is not mistaken for proof. Planning does not require a baseline test run.
+
 **Does the V2 name mean an experimental second version?**
 
 No. The name remains a compatible invocation entry. Repository releases use an independent version.
